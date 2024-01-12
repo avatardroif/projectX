@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+      .Pass1 {
+        height: 5%;
+        width: 80%;
+        border: 3px solid black;
+      }
+      .btn {
+        height: 5%;
+        width: 30%;
+        border: 3px solid black;
+      }
+
+    </style>
+</head>
+<body style="background-image: url('./laboratory\ img.jpg'); 
+background-size: cover; 
+height: 100vh; 
+display: flex; 
+align-items: center; 
+justify-content: center;">
+  <form class="form-inline">
+    <div class="A1">
+      <form class="pure-form">
+        <fieldset>
+            <legend> Now only left to do is read </legend>
+    
+            <input type="password" placeholder="Password" id="DECRIPTOL" required>
+            <!-- <input type="password" placeholder="Confirm Password" id="confirm_password" required> -->
+    
+            <button type="submit" class="pure-button pure-button-primary" > Confirm</button>
+        </fieldset>
+    </form>
+  </form>
+
+</body>
+
+
+    
+   
+<!-- <script src="index.js"></script> -->
+
+
+
+<script>
+  // Counter for wrong password entries
+let attempts = 0;
+
+// Mock password verification
+function verifyPassword(password) {
+  return password === "DECRIPTOL";
+}
+
+// Prompt for password entry
+let password = prompt("Enter your password");
+
+
+// Check the password and validate the attempts
+while (!verifyPassword(password)) {
+  attempts++;
+
+  if (attempts === 3) {
+      alert("Too many failed attempts. Please try again later.");
+      break;
+  } else {
+      password = prompt("Password is incorrect. Please try again.");
+      window.location.href="kp3.html";
+
+  }
+}
+
+// Display a success message if the correct password was entered
+if (attempts < 3) {
+  window.location.href="kp5.html"
+  
+}
+</script>
+
+</html>
